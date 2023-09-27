@@ -1,7 +1,11 @@
 import Home from "./pages/Home"
+import './app.css'
+
 function App() {
   return (
-    <Home />
+    <div className="App">
+      <Home />
+    </div>
   )
 }
 export default App
