@@ -13,12 +13,14 @@ export default class Home extends React.Component {
           <Header />
           <Grid
           p={6}
-            templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+            justifyItems='center'
             gap={4}
             rowGap={6}
           >
             <CardProduct />
             <CardProduct />
+
           </Grid>
         </GridItem>
       </Grid>
