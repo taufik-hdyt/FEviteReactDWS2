@@ -5,7 +5,7 @@ import DrawerComponent from "./Drawer";
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box display={{ base: "block", md: "none" }}>
+    <Box display={{ base: "block", lg: "none" }}>
       <HStack
         px={6}
         py={2}

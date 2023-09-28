@@ -35,7 +35,7 @@ export default class CardProduct extends React.Component<IProps> {
 
     const { name, description, imageUrl, tag, categories } = this.props;
     return (
-      <Card maxW="250px" pos="relative">
+      <Card pos="relative">
         <Image w="100%" h="150px" src={imageUrl} alt={name} roundedTop="lg" />
         <Stack spacing="3" p={3}>
           <Heading size="md" style={customStyleTitle}>

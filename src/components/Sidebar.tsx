@@ -57,7 +57,7 @@ export default class Sidebar extends React.Component<object, IState> {
     return (
       <GridItem
         p={8}
-        display={{ base: "none", md: "block" }}
+        display={{ base: "none", lg: "block" }}
         shadow="md"
         pos="relative"
       >
