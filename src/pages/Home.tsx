@@ -49,6 +49,8 @@ export default class Home extends React.Component {
             justifyItems="center"
             gap={4}
             rowGap={6}
+            overflowY='auto'
+            maxH='100vh'
           >
             {
               data.map((e:IData)=> (
