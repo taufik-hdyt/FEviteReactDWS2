@@ -59,7 +59,6 @@ export default class Sidebar extends React.Component<object, IState> {
         p={8}
         display={{ base: "none", md: "block" }}
         shadow="md"
-        h="100vh"
         pos="relative"
       >
         <HStack borderBottom="2px solid black" pb={4}>

@@ -1,7 +1,24 @@
-import {   Box, Card, CardFooter, Divider,  Heading, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardFooter,
+  Divider,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 
-export default class CardProduct extends React.Component {
+interface IProps {
+  tag?: string;
+  name?: string;
+  imageUrl?: string;
+  price?: number;
+  categories?: [];
+  description?: string;
+}
+export default class CardProduct extends React.Component<IProps> {
   render() {
     const customStyleParagraf: React.CSSProperties = {
       display: "-webkit-box",
@@ -9,36 +26,51 @@ export default class CardProduct extends React.Component {
       WebkitBoxOrient: "vertical",
       overflow: "hidden",
     };
-    const customStyleTitle: React.CSSProperties ={
+    const customStyleTitle: React.CSSProperties = {
       display: "-webkit-box",
       WebkitLineClamp: 1,
       WebkitBoxOrient: "vertical",
       overflow: "hidden",
-    }
+    };
+
+    const { name, description, imageUrl, tag, categories } = this.props;
     return (
-      <Card maxW='250px' pos='relative'>
-        <Image
-          src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-          alt='Green double couch with wooden legs'
-          roundedTop='lg'
-        />
-        <Stack spacing='3' p={3}>
-          <Heading size='md' style={customStyleTitle}>Living room Sofa</Heading>
-          <Text textAlign='justify' fontSize='sm' style={customStyleParagraf}>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design with a
-            sprinkle of vintage design.
+      <Card maxW="250px" pos="relative">
+        <Image w="100%" h="150px" src={imageUrl} alt={name} roundedTop="lg" />
+        <Stack spacing="3" p={3}>
+          <Heading size="md" style={customStyleTitle}>
+            {name}
+          </Heading>
+          <Text textAlign="justify" fontSize="sm" style={customStyleParagraf}>
+            {description}
           </Text>
         </Stack>
 
-      <Divider color='lightgray' />
-      <CardFooter p={3} display='flex' gap={3}>
-        <Box px={3} rounded='lg' border='1px solid lightgray'>Cocolate</Box>
-        <Box px={3} rounded='lg' border='1px solid lightgray'>cake</Box>
-      </CardFooter>
+        <Divider color="lightgray" />
+        <CardFooter p={3} display="flex" gap={3}>
+          {categories?.map((e) => (
+            <Box px={3} rounded="lg" border="1px solid lightgray">
+              {e}
+            </Box>
+          ))}
+        </CardFooter>
 
-      <Text pos='absolute' top='-2px' left='50%'  transform="translate(-50%, -50%)" fontWeight='semibold' color='white' rounded='lg' px={2} bg='green'>NEW!!!</Text>
-    </Card>
+        <Box
+          pos="absolute"
+          top="-2px"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          fontWeight="semibold"
+          color="white"
+          rounded="lg"
+          px={2}
+          bg={
+            tag === 'NEW' ? 'green' : tag === 'FAVORITE' ? 'blue' : tag === 'FEATURED' ? 'purple': ''
+          }
+        >
+          {tag}!!!
+        </Box>
+      </Card>
     );
   }
 }
