@@ -11,8 +11,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FcSearch } from "react-icons/fc";
-import { BiSolidCategoryAlt } from "react-icons/bi";
 import { AiOutlineFilter, AiFillTag } from "react-icons/ai";
+import { BiSolidCategoryAlt } from "react-icons/bi";
 import { LuArrowRightCircle } from "react-icons/lu";
 
 export default class Sidebar extends React.Component {
