@@ -69,7 +69,6 @@ export default class Sidebar extends React.Component<object, IState> {
             Filter
           </Text>
         </HStack>
-
         <InputGroup
           size="md"
           mt={4}
