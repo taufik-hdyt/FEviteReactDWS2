@@ -11,12 +11,14 @@ import {
 import React from "react";
 
 interface IProps {
+  id?: number
   tag?: string;
   name?: string;
   imageUrl?: string;
   price?: number;
   categories?: [];
   description?: string;
+  onOpenModal: (e: boolean)=> void
 }
 export default class CardProduct extends React.Component<IProps> {
   render() {
@@ -33,9 +35,9 @@ export default class CardProduct extends React.Component<IProps> {
       overflow: "hidden",
     };
 
-    const { name, description, imageUrl, tag, categories } = this.props;
+    const { name, description, imageUrl, tag, categories,onOpenModal } = this.props;
     return (
-      <Card pos="relative">
+      <Card pos="relative" cursor='pointer' onClick={()=>onOpenModal(true)}>
         <Image w="100%" h="150px" src={imageUrl} alt={name} roundedTop="lg" />
         <Stack spacing="3" p={3}>
           <Heading size="md" style={customStyleTitle}>
@@ -49,7 +51,7 @@ export default class CardProduct extends React.Component<IProps> {
         <Divider color="lightgray" />
         <CardFooter p={3} display="flex" gap={3}>
           {categories?.map((e) => (
-            <Box px={3} rounded="lg" border="1px solid lightgray">
+            <Box key={e} px={3} rounded="lg" border="1px solid lightgray">
               {e}
             </Box>
           ))}

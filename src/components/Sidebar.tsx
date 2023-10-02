@@ -60,6 +60,7 @@ export default class Sidebar extends React.Component<object, IState> {
         display={{ base: "none", lg: "block" }}
         shadow="md"
         pos="relative"
+        h='100vh'
       >
         <HStack borderBottom="2px solid black" pb={4}>
           <Center bg="black" rounded="full" w="30px" h="30px">
